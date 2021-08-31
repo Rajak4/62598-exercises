@@ -28,15 +28,7 @@ const simplify = (num, den) => {
 }
 
 // #4 - Power
-const power = (num, exp) => {
-    if (exp === 0) {
-        return 1;
-    } else if (exp % 2 === 0) {
-        return power(num, Math.floor(exp / 2)) * power(num, Math.floor(exp / 2))
-    } else {
-        return num * power(num, Math.floor(exp / 2)) * power(num, Math.floor(exp / 2))
-    }
-}
+const power = (num, exp) => exp > 0 ? power(num, exp-1) * num : 1
 
 // #5 - Fibonacci
 const fibbonacci = n => n <= 2 ? 1 : fibbonacci(n - 1) + fibbonacci(n - 2)
